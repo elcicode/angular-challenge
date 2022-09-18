@@ -1,0 +1,10 @@
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Platos" aria-label="Search"
+          [(ngModel)]="inputQuery" name="inputName"
+          (keydown.enter)="getRecipeByQuery()"
+        />
+        <button class="btn btn-outline-success" type="button"
+          (click)="getRecipeByQuery()"
+          >Buscar
+        </button>
+      </form>

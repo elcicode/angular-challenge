@@ -1,0 +1,53 @@
+<div class="div-body" id="top">
+
+  <!-- Averages -->
+
+  <div class="alert alert-secondary" role="alert" *ngIf="priceTotal">
+    <strong><small class="price-total" style="color: rgb(37, 33, 33);display: block;">Precio total: {{ priceTotal | currency }}</small></strong>
+    <strong><small style="display: block;">Promedio preparación: {{ averageReady }} minutos aprox</small></strong>
+    <strong><small style="display: block;">Promedio de Health Score: {{ averageScore }}</small></strong>
+  </div>
+
+
+  <!-- Recipes added -->
+
+  <div class="div-container-menu" >
+    <div class="div-menu">
+        <div *ngFor="let recipe of recipes" style="display: grid; gap: 1rem; padding: 20px; background-color: rgba(231, 231, 231, 0.962);">
+          <app-img *ngIf="recipe.image.length > 0" [img]="recipe.image"></app-img>
+          <app-title [title]="recipe.title"></app-title>
+          <strong><small style="display: block;" class="card-text">Price: {{ recipe.pricePerServing | currency }}</small></strong>
+          <small style="display: block;">Health Score: {{ recipe.healthScore }}</small>
+          <small style="display: block;">Ready in: {{ recipe.readyInMinutes }} minutes</small>
+          <p [innerHTML]="recipe.summary" style="height: 25rem; overflow: scroll; padding: 20px 0;"></p>
+          <p style="display: grid; padding: 10px; gap: 10px;">
+            <button (click)="deleteRecipe(recipe)" type="button" class="btn btn-outline-danger">Eliminar</button>
+          </p>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- Menu -->
+
+  <div class="div-container-menu">
+    <div class="div-menu">
+      <div *ngFor="let item of menu$ | async">
+        <div *ngIf="item.image" style="display: grid; gap: 1rem; padding: 20px;">
+          <app-img *ngIf="item.image.length > 0" [img]="item.image"></app-img>
+          <app-title [title]="item.title"></app-title>
+          <strong><small style="display: block;" class="card-text">Price: {{ item.pricePerServing | currency }}</small></strong>
+          <small style="display: block;">Health Score: {{ item.healthScore }}</small>
+          <small style="display: block;">Ready in: {{ item.readyInMinutes }} minutes</small>
+          <p [innerHTML]="item.summary" style="height: 25rem; overflow: scroll; padding: 20px 0;"></p>
+          <p style="display: grid; padding: 10px; gap: 10px">
+            <button (click)="addRecipe(item)" (click)="scrollToTop()" type="button" class="btn btn-outline-success">Agregar</button>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+

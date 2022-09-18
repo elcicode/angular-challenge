@@ -1,0 +1,16 @@
+.div-login {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 800px;
+}
+.div-form {
+  display: grid;
+  justify-items: center;
+  align-items: flex-start;
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .7;
+}

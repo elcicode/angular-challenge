@@ -1,0 +1,28 @@
+.div-body {
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  align-items: flex-start;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.div-price-total {
+  display: grid;
+  justify-items: start;
+  width: auto;
+}
+
+.div-container-menu {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+}
+
+.div-menu {
+  gap: 1rem;
+  margin-top: 20px;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}

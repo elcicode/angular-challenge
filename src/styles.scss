@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+app-login {
+  display: grid;
+  justify-items: center;
+  background-image: url(./assets/app-menu.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+app-home {
+  display: grid;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100vw;
+}
+
+app-menu {
+  display: grid;
+  align-items: flex-start;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+app-nav {
+  display: grid;
+  align-items: flex-start;
+  width: 100%;
+}

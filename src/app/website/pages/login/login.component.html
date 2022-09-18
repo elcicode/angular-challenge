@@ -1,0 +1,28 @@
+<div class="div-login" class="d-flex p-2 align-items-center">
+  <div class="div-form">
+    <h1 style="color: rgb(255, 255, 255); align-self: center; display: grid; align-self: center; margin: 10px 0 0 0;">A la Carta</h1>
+    <form #formLogin="ngForm" class="form" [formGroup]="form" (ngSubmit)="login()">
+      <div class="mb-3" style="display: grid; gap: 10px;">
+        <input name="email" type="email" formControlName="email" class="form-control" aria-describedby="emailHelp" placeholder="email@mail.com" style="padding: 12px;">
+        <small
+          *ngIf="form.controls['email'].invalid"
+          style="background-color: red; color: white;display: block; width: 100%; border-radius: 2px;">
+          Email requerido
+        </small>
+      </div>
+      <div class="mb-3" style="display: grid; gap: 10px;">
+        <input name="password" type="password" formControlName="password" required  class="form-control" placeholder="password" class="form-control" style="padding: 12px;">
+        <small
+          *ngIf="form.controls['password'].invalid"
+          style="background-color: red; color: white;display: block; width: 100%; border-radius: 2px;">
+          Password requerido
+        </small>
+      </div>
+      <div class="d-grid gap-2" style="height: 50px;">
+        <button [disabled]="form.invalid" type="submit" class="btn btn-outline-light">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
