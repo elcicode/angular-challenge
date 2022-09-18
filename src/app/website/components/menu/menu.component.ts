@@ -135,14 +135,6 @@ averageScore: number = 0;
 
   scrollToTop(){
 
-    swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Plato agregado!',
-      showConfirmButton: false,
-      timer: 1500
-    })
-
     let element = document.querySelector("#top")?.scrollIntoView();
 
   }
